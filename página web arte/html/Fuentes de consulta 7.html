@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Fuentes de consuta.</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Times New Roman;
+	background-color:#FFF;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ este contenedor de anchura fija rodea a las demás divs ~~ */
+.container {
+	width: 960px;
+	background-color: #f4ece4;
+	background-imagen: D:\logo grande.jpg;
+	margin: 0 auto; 
+	/* el valor automático de los lados, unido a la anchura, centra el diseño */
+}
+
+/* ~~ no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado ~~ */
+.header {
+	background-imagen: D:\logo grande.jpg;
+	background-color: #f4ece4;
+	height:300px;
+	font-weight:800px;
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de las divs. Los elementos situados dentro de estas divs tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en una div configurada para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de divs para las que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla de la div para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos divs de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en dirección opuesta (todas a la izquierda en lugar de todas a la derecha) y éstas se representarán en orden inverso. No es necesario mover las divs por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 180px;
+background-color: #f4ece4;
+	padding-bottom: 10px;
+}
+.content {
+
+	padding: 10px 0;
+	width: 780px;
+	float: right;
+background-color: #f4ece4;
+	
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;background-color: #f4ece4;
+	
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #f4ece4;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #f4ece4;
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style></head>
+
+<body >
+<div class="container">
+  <div class="header">
+    <p><!-- end .header --><img src="../imagenes/logo.PNG" width="945" height="370" /></p>
+  </div>
+  <div class="sidebar1"><a href="D:\página web arte\html\Práctica sobre arte ♥Artes plasticas y literarias 1.html"><img src="file:///D|/página web arte/imagenes/artes plásticas y literarias 1.PNG" width="175" height="100" /></a>
+    <p>                                                            </p><p>                                                            </p>
+   <a href="D:\página web arte\html\Areas de las artes plasticas 2.html"><img src="../imagenes/áreas de las artes plásticas 3.PNG" width="175" height="100" /></a>
+    <p>                                                            </p><p>                                                            </p> <a href="D:\página web arte\html\Artes plasticas y artistas famosos  3.html"><img src="../imagenes/arters plásticas y artistas famosos 2.PNG" width="175" height="100" /></a>
+    <p>                                                            </p><p>                                                            </p>
+    <a href="D:\página web arte\html\Areas de las artes literarias 4.html"><img src="../imagenes/areas de las artes literarias 4.PNG" width="175" height="100" /></a>
+    <p>                                                            </p><p>                                                            </p>
+    <a href="D:\página web arte\html\Artes literarias y celebres de la literatura 5.html"><img src="../imagenes/artes literarias y celebres  5.PNG" width="175" height="100" /></a>
+    <p>                                                            </p><p>                                                            </p>
+    <a href="D:\página web arte\html\Artistas y el arte de hacer arte 6.html"><img src="../imagenes/artistas y el arte de hacer arte 6.PNG" width="175" height="100" /></a> 
+    <p>                                                            </p><p>                                                            </p>
+    <a href="D:\página web arte\html\Fuentes de consulta 7.html"><img src="../imagenes/buscador.PNG" width="175" height="100" /></a><!-- end .sidebar1 --></div>
+  <div class="content">
+    <font size="20"> <B> Fuentes de consuta.</B></font><strong> </strong>
+    <p><strong>
+    <h3>Página 1 Artes plásticas.
+    </h3></strong>
+    <p><a href="https://blog.educaweb.mx/artes-plasticas-salidas-creacion/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://blog.educaweb.mx/artes-plasticas-salidas-creacion/&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw0n7sdio9kt-eJTSDxsglWP">https://blog.educaweb.mx/artes-plasticas-salidas-creacion/</a> <br />
+      <a href="http://edu.co/blog-universidad-el-bosque/Artes-plasticas-como-medio-de-comunicacion" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://edu.co/blog-universidad-el-bosque/Artes-plasticas-como-medio-de-comunicacion&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw3MpgNmsvGjH_SzIG-U7dWH">edu.co/blog-universidad-el-bosque/Artes-plasticas-como-medio-de-comunicacion</a></p>
+    <p> <br />
+    <strong></strong></p>
+    <strong><h3>Página 2 Áreas de las artes plásticas y artistas famosos</h3></strong>
+    <p><a href="https://concepto.de/artes-plasticas/#ixzz7uFalHj7Z" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://concepto.de/artes-plasticas/%23ixzz7uFalHj7Z&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw3vjAIRjJ8-p91SdnvNhnMG">https://concepto.de/artes-plasticas/#ixzz7uFalHj7Z</a><br />
+    </p>
+    <p><strong> Obras de arte plásticas </strong></p>
+    <p><a href="https://concepto.de/artes-plasticas/#ixzz7uFh78SUC" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://concepto.de/artes-plasticas/%23ixzz7uFh78SUC&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw0k0y5OMy_72_f5arqO7Q0e">https://concepto.de/artes-plasticas#ixzz7uFh78SUC</a></p>
+    <p><strong>Pintura-</strong> <a href="https://historia.nationalgeographic.com.es/a/guernica-picasso-paso-a-paso_12698" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://historia.nationalgeographic.com.es/a/guernica-picasso-paso-a-paso_12698&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw0iVBwf9tKP1it_078XB4Vq">https://historia.nationalgeographic.com.es/a/guernica-picasso-paso-a-paso_12698</a> </p>
+    <p><strong>Escultura-</strong> https:/ /<a href="http://temasycomentariosartepaeg.blogspot.com/p/rodin-e.html?m=1" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://temasycomentariosartepaeg.blogspot.com/p/rodin-e.html?m%3D1&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw23Qi_YN5st5ovbRF25Pg4J">temasycomentariosartepaeg.blogspot.com/p/rodin-e.html?m=1</a></p>
+    <p><strong>Cerámica-</strong> <a href="https://pin.it/t39Y1QM" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://pin.it/t39Y1QM&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw23ZoAfZuu8kS69MVWZbpI-">https://pin.it/t39Y1QM</a></p>
+    <p><strong>Dibujo-</strong> <a href="https://es.m.wikipedia.org/wiki/Archivo:Danseuse_en_blanc_-_Edgar_Degas.jpg" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://es.m.wikipedia.org/wiki/Archivo:Danseuse_en_blanc_-_Edgar_Degas.jpg&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw2y_xK-jhmx6LsnBDwHDIEM">https://es.m.wikipedia.org/wiki/Archivo:Danseuse_en_blanc_-_Edgar_Degas.jpg</a></p>
+    <p><strong>Grabado- </strong><a href="https://www.realacademiabellasartessanfernando.com/es/goya/goya-en-la-calcografia-nacional/caprichos/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.realacademiabellasartessanfernando.com/es/goya/goya-en-la-calcografia-nacional/caprichos/&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw1A5CCeorEzi5FuM3FWW41T">https://www.realacademiabellasartessanfernando.com/es/goya/goya-en-la-calcografia-nacional/caprichos/</a></p>
+    <p> <br />
+    <strong></strong></p>
+    <strong><h3>Página 3 Artistas de las artes plásticas.</h3>
+    </strong>
+    <p><strong>Vincent Van Gogh </strong></p>
+    <p><strong>Autorretrato-</strong> <a href="https://www.biografiasyvidas.com/biografia/g/gogh.htm" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.biografiasyvidas.com/biografia/g/gogh.htm&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw2j8isdEL8S8q_ItHrnhd5N">https://www.biografiasyvidas.com/biografia/g/gogh.htm</a></p>
+    <p><strong>Noche estrellada-</strong><a href="https://historia.nationalgeographic.com.es/a/vincent-van-gogh-pintor-atormentado-e-incomprendido_14554/amp" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://historia.nationalgeographic.com.es/a/vincent-van-gogh-pintor-atormentado-e-incomprendido_14554/amp&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw2wbw3JF_p_pJSYuDD79nvR">https://historia.nationalgeographic.com.es/a/vincent-van-gogh-pintor-atormentado-e-incomprendido_14554/amp</a></p>
+    <p><strong>Noche de verano- </strong><a href="https://www.corradi.eu/es/magazine/una-noche-de-verano-en-la-ciudad-con-vincent-van-gogh" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.corradi.eu/es/magazine/una-noche-de-verano-en-la-ciudad-con-vincent-van-gogh&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw0Y5K3bocfaaJXT0wqjEQD1">https://www.corradi.eu/es/magazine/una-noche-de-verano-en-la-ciudad-con-vincent-van-gogh</a></p>
+    <p><strong>Girasoles-</strong> <a href="https://www.worldhistory.org/trans/es/1-20649/vincent-van-gogh/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.worldhistory.org/trans/es/1-20649/vincent-van-gogh/&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw0zJZPNagL7eeCal_r13TUT">https://www.worldhistory.org/trans/es/1-20649/vincent-van-gogh/</a></p>
+    <p> <br />
+    </p>
+    <p><strong>Gustav klimt </strong></p>
+    <p><strong>El beso-</strong> <a href="https://www.todocuadros.cl/pintores-famosos/klimt/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.todocuadros.cl/pintores-famosos/klimt/&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw3DHZF-Bu72uj1INeoy92WT">https://www.todocuadros.cl/pintores-famosos/klimt/</a></p>
+    <p> <br />
+    </p>
+    <p><strong>Miguel Ángel </strong></p>
+    <p><strong>El David-  Bóveda de la capilla sixtina-</strong> <a href="https://www.jmhdezhdez.com/2020/05/capilla-sixtina-miguel-angel-frescos-techo-boveda-pinturas-juicio-final.html?m=1" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.jmhdezhdez.com/2020/05/capilla-sixtina-miguel-angel-frescos-techo-boveda-pinturas-juicio-final.html?m%3D1&amp;source=gmail&amp;ust=1684592004218000&amp;usg=AOvVaw0j_ATKrztLzsMGsA4mKOt7">https://www.jmhdezhdez.com/2020/05/capilla-sixtina-miguel-angel-frescos-techo-boveda-pinturas-juicio-final.html?m=1</a></p>
+    <p> <br />
+    </p>
+    <p><strong>Leonardo Da Vinci </strong></p>
+    <p><strong>La última cena-</strong> <a href="https://justitalia.es/conoce-a-los-pintores-italianos-mas-importantes" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://justitalia.es/conoce-a-los-pintores-italianos-mas-importantes&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw2XChc8VG6fdi3cZ94eEpGK">https://justitalia.es/conoce-a-los-pintores-italianos-mas-importantes</a></p>
+    <p><strong>La giaconda-</strong> <a href="https://es.m.wikipedia.org/wiki/La_Gioconda" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://es.m.wikipedia.org/wiki/La_Gioconda&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw2Tp2w9KAAclsH3fSM78z4G">https://es.m.wikipedia.org/wiki/La_Gioconda</a></p>
+    <p> <br />
+    </p>
+    <p><strong>Sandro Botticelli </strong></p>
+    <p><strong>El nacimiento de Venus-</strong> <a href="https://es.artsdot.com/@@/9DJ998-Sandro-Botticelli-El-nacimiento-de-Venus--" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://es.artsdot.com/@@/9DJ998-Sandro-Botticelli-El-nacimiento-de-Venus--&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw2dS10CyCp6RzVLP6FyAMRu">https://es.artsdot.com/@@/9DJ998-Sandro-Botticelli-El-nacimiento-de-Venus--</a></p>
+    <p><br />
+  </p>
+    <p><strong>Salvador Dalí </strong></p>
+    <p><strong>La persistencia de la memoria-</strong> <a href="https://www.biografiasyvidas.com/biografia/d/dali.htm" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.biografiasyvidas.com/biografia/d/dali.htm&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw2VoeYAQdEmcO1mMEJpSUV7">https://www.biografiasyvidas.com/biografia/d/dali.htm</a></p>
+    <p><br />
+    </p>
+    <p><strong>Edvard Munch.</strong></p>
+    <p><strong>El grito- </strong><a href="https://revistasieteartes.com/2020/03/09/una-ventana-al-psicoanalisis-el-grito-de-munch-y-la-angustia-del-hombre-contemporaneo-por-maria-nieves-gorosito/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://revistasieteartes.com/2020/03/09/una-ventana-al-psicoanalisis-el-grito-de-munch-y-la-angustia-del-hombre-contemporaneo-por-maria-nieves-gorosito/&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw15ITEQirLPBZppS6xkGQAz">https://revistasieteartes.com/2020/03/09/una-ventana-al-psicoanalisis-el-grito-de-munch-y-la-angustia-del-hombre-contemporaneo-por-maria-nieves-gorosito/</a>    </p>
+    <p><strong></strong></p>
+    <strong><h3>Página 4 Áreas de las artes literarias.</h3>
+    </strong>
+    <p><strong>Artes literarias -</strong></p>
+    <p><a href="https://www.euroinnova.edu.es/por-que-la-literatura-es-arte/amp" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.euroinnova.edu.es/por-que-la-literatura-es-arte/amp&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw3-rJuEMcm-3T2obBRXKRvI">https://www.euroinnova.edu.es/por-que-la-literatura-es-arte/amp</a><br />
+    </p>
+    <p><a href="https://www.cinconoticias.com/artes-literarias/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.cinconoticias.com/artes-literarias/&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw391h7VRu0MDYiXSLIZHZfg">https://www.cinconoticias.com/artes-literarias/</a></p>
+    <p><strong>Géneros literarios- </strong></p>
+    <p><a href="https://docentesaldia.com/2021/09/05/generos-y-subgeneros-literarios-cuales-son-explicacion-y-ejemplos/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://docentesaldia.com/2021/09/05/generos-y-subgeneros-literarios-cuales-son-explicacion-y-ejemplos/&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw12-ZciNNdvZuPcKOZy85Tj">https://docentesaldia.com/2021/09/05/generos-y-subgeneros-literarios-cuales-son-explicacion-y-ejemplos/</a><br />
+    </p>
+    <p><a href="https://es.m.wikipedia.org/wiki/G%C3%A9nero_literario" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://es.m.wikipedia.org/wiki/G%25C3%25A9nero_literario&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw089BxrFJrSpD04TW5WlF4q">https://es.m.wikipedia.org/wiki/G%C3%A9nero_literario</a></p>
+    <p> <br />
+    <strong></strong></p>
+    <strong><h3>Página 5 Artistas célebres de la literatura.</h3></strong>
+    <p><a href="https://www.francoespanolas.com/blog/clasicos-literatura-universal/" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.francoespanolas.com/blog/clasicos-literatura-universal/&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw3judZ0euTn0d5q5A8yXsOH">https://www.francoespanolas.com/blog/clasicos-literatura-universal/</a><br />
+  </p>
+    <p><a href="https://www.abc.es/cultura/cultural/abci-100-mejores-libros-literatura-universal-201806030125_noticia_amp.html" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://www.abc.es/cultura/cultural/abci-100-mejores-libros-literatura-universal-201806030125_noticia_amp.html&amp;source=gmail&amp;ust=1684592004219000&amp;usg=AOvVaw2nxecko4pic-BzxCOormBU">https://www.abc.es/cultura/cultural/abci-100-mejores-libros-literatura-universal-201806030125_noticia_amp.html</a></p>
+    <p><strong></strong></p>
+    <p>&nbsp;</p>
+    <strong><h3>Página 6 Artistas y el arte de hacer arte. </h3></strong></p>
+    <p dir="auto">Fuentes e información propias, la mayoría de la entrevista </p>
+    <p align="justify">&nbsp;</p>
+    <p>&nbsp;</p>
+  <!-- end .content --></div>
+  <div class="footer">
+    <p>Derechos reservados a Kassandra Sigala Zavala, Hello my name is Arte(c) 2023.</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
+
